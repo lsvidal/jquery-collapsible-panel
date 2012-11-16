@@ -1,0 +1,1 @@
+This is my first programming attempt on jQuery, it´s a collapsible panel inspired on he work done by Harry Jennerway (http://www.leghumped.com/blog/2011/11/26/jquery-collapsible-panel-plugin/) and Darren Ingram (http://www.darreningram.net/pages/examples/jQuery/CollapsiblePanelPlugin.aspx).

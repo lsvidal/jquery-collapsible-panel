@@ -4,9 +4,17 @@
 				$(this).each(function () {
 					$(this).addClass("ui-widget");
 					$(this).wrapInner("<div class='ui-widget-content'></div>");
-					$("<div class='ui-widget-header'><span class='ui-icon ui-expander ui-icon-triangle-1-s' style='float: left'>+</span><span>" + $(this).attr("title") + "</span></div>").prependTo($(this));
+					$("<div class='ui-widget-header'><span class='ui-icon ui-expander' style='float: left'>+</span><span>" + $(this).attr("title") + "</span></div>").prependTo($(this));
 					$(this).removeAttr("title");
-					$(".ui-widget-content", this).slideUp();					
+					
+					if ($(this).attr("state") == 'open') {
+						$(".ui-widget-content", this).slideDown();
+						$(".ui-expander", this).addClass('ui-icon-triangle-1-e');						
+					} else {
+						$(".ui-widget-content", this).slideUp();
+						$(".ui-expander", this).addClass('ui-icon-triangle-1-s');
+					} 
+										
 					$(".ui-widget-header", this).click(function () {
 						var content = $(".ui-widget-content", $(this).parent());
 						content.slideToggle(300, function() {
